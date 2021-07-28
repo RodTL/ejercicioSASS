@@ -1,0 +1,89 @@
+@import "variables";
+
+.main-area {
+  height: $mainHeight + 20px;
+  width: $mainWidth;
+  padding-top: 5%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(6, 240px);
+  grid-template-rows: repeat(2, 300px);
+  grid-gap: 20px;
+  grid-template-areas:
+    "box1 box2 box2 box2 box2 box2"
+    "box1 box3 box3 box3 box4 box4";
+}
+
+.main-area div > img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+#box1 {
+  grid-area: box1;
+  background-color: blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#box2 {
+  grid-area: box2;
+  background-color: green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#box3 {
+  grid-area: box3;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#box4 {
+  grid-area: box4;
+  background-color: purple;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: $bp1) {
+  .main-area {
+    width: 1040px;
+    grid-template-columns: repeat(4, 245px);
+    grid-template-rows: repeat(3, 200px);
+    grid-template-areas:
+      "box1 box2 box2 box2"
+      "box1 box3 box3 box3"
+      "box1 box4 box4 box4";
+  }
+}
+
+@media screen and (max-width: $bp2) {
+  .main-area {
+    width: 750px;
+    grid-template-columns: repeat(2, 375px);
+    grid-template-rows: repeat(3, 200px);
+    grid-template-areas:
+      "box1 box1"
+      "box2 box2"
+      "box3 box4";
+  }
+}
+
+@media screen and (max-width: $bp3) {
+  .main-area {
+    width: 450px;
+    grid-template-columns: repeat(2, 225px);
+    grid-template-rows: repeat(4, 150px);
+    grid-template-areas:
+      "box1 box1"
+      "box2 box2"
+      "box3 box3"
+      "box4 box4";
+  }
+}
