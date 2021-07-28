@@ -1,4 +1,5 @@
 @import "variables";
+@import "mixins";
 
 .main-area {
   height: $mainHeight + 20px;
@@ -12,43 +13,48 @@
   grid-template-areas:
     "box1 box2 box2 box2 box2 box2"
     "box1 box3 box3 box3 box4 box4";
+
+  //nesting se puede hacer en SASS
+  div {
+    img {
+      max-height: 100%;
+      max-width: 100%;
+    }
+  }
 }
 
+/* esto ya no es necesario ponerlo fuera en SASS porque puedo hacer nesting de mis selectores
 .main-area div > img {
   max-height: 100%;
   max-width: 100%;
 }
+*/
 
 #box1 {
   grid-area: box1;
   background-color: blue;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  //con el include de abajo llamo al mixin que se llama
+  //style1 y lo puedo hacer porque hice import del partial
+  // _mixins en la primera parte del doc
+  @include style1();
 }
 
 #box2 {
   grid-area: box2;
   background-color: green;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include style1();
 }
 
 #box3 {
   grid-area: box3;
   background-color: red;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include style1();
 }
 
 #box4 {
   grid-area: box4;
   background-color: purple;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include style1();
 }
 
 @media screen and (max-width: $bp1) {

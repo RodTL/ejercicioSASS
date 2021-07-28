@@ -8,11 +8,16 @@
   grid-template-rows: repeat(2, 300px);
   grid-gap: 20px;
   grid-template-areas: "box1 box2 box2 box2 box2 box2" "box1 box3 box3 box3 box4 box4"; }
+  .main-area div img {
+    max-height: 100%;
+    max-width: 100%; }
 
+/* esto ya no es necesario ponerlo fuera en SASS porque puedo hacer nesting de mis selectores
 .main-area div > img {
   max-height: 100%;
-  max-width: 100%; }
-
+  max-width: 100%;
+}
+*/
 #box1 {
   grid-area: box1;
   background-color: blue;
